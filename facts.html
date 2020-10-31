@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Responsive Video Background</title>
+    <link rel="stylesheet" href="master.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="jquery.vide.js"></script>
+</head>
+<style>
+    html,
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    h1 {
+        font-family: Poppins;
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: 600;
+        font-size: 40px;
+        text-align: center;
+        padding-top: 40px;
+    }
+    
+    .overlay {
+        background-color: rgba(0, 0, 0, 0.7);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+    }
+    
+    @media only screen and (max-width: 768px) {
+        h1 {
+            font-size: 12px;
+            letter-spacing: 4px;
+        }
+    }
+    
+    ol {
+        color: white;
+        font-size: 18px;
+        margin: 0 30px;
+        font-weight: 600;
+    }
+    
+     :root {
+        --animate-duration: 3s;
+    }
+    
+    .cli {
+        color: red;
+    }
+    
+    button {
+        margin-top: 80px;
+    }
+</style>
+
+<body data-vide-bg="motionplace">
+    <div class="overlay">
+        <a href="index.html"><i style='font-size:30px; margin:10px; color:black;' class='fas'>&#xf060;</i></a>
+        <h1 class="animate__animated animate__fadeInDown animate__delay-0s"><span class="cli">CLIMATE CHANGE:</span> 5 FACTS YOU NEED TO KNOW</h1>
+        <br><br>
+        <ol>
+            <li class="animate__animated animate__fadeInLeft animate__delay-1s">The concentration of carbon dioxide (CO2)​​​​​​​ in our atmosphere, as of May 2020, is the highest it has been in human history - 416 part​s per million.</li>
+            <br>
+            <li class="animate__animated animate__fadeInLeft animate__delay-2s">NASA data show that average global temperatures in 2019 were 1.8 degrees F (0.98 degrees C) warmer than the 20th century average.</li>
+            <br>
+            <li class="animate__animated animate__fadeInLeft animate__delay-3s">Just 0.7% of the world’s forests are coastal mangroves, y​​​​​​et they store up to 10 times as much carbon per hectare as tropical forests.</li>
+            <br>
+            <li class="animate__animated animate__fadeInLeft animate__delay-4s">800,000 hectares of mangrooves lost every year. If we continue to lose mangroves at this rate, they may disappear within the next century. </li>
+            <br>
+            <li class="animate__animated animate__fadeInLeft animate__delay-5s">189 countries have ratified the 2015 Paris Agreement, agreeing to limit global warming and adapt to climate change, partly by protecting nature.</li>
+        </ol>
+
+        <div class="text-center">
+            <a href="quiz/index.html"><button type="button" class="btn btn-lg btn-outline-danger animate__animated animate__fadeInLeft animate__delay-5s">Take a quiz!</button></a>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,920 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Document</title>
+</head>
+
+<style>
+    .carousel-item {
+        height: 100vh;
+        min-height: 300px;
+        background: no-repeat center center scroll;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+    .carousel-item img {
+        animation: zoominoutsinglefeatured 5s;
+    }
+    
+    @keyframes zoominoutsinglefeatured {
+        0% {
+            transform: scale(1.2, 1.2);
+        }
+        100% {
+            transform: scale(1, 1);
+        }
+    }
+    
+    .carousel-caption {
+        bottom: 220px;
+        background: rgba(0, 0, 0, 0.5);
+    }
+    
+    .carousel-caption h5 {
+        font-size: 45px;
+        text-transform: uppercase;
+        margin-top: 25px;
+    }
+    
+     :root {
+        --animate-duration: 4s;
+    }
+    
+    @media all and (min-width: 992px) {
+        .navbar .nav-item .dropdown-menu {
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            transition: .3s;
+            margin-top: 0;
+        }
+        .navbar .nav-item:hover .nav-link {
+            color: #000;
+        }
+        .navbar .dropdown-menu.fade-down {
+            top: 80%;
+            transform: rotateX(-75deg);
+            transform-origin: 0% 0%;
+        }
+        .navbar .nav-item:hover .dropdown-menu {
+            transition: .3s;
+            opacity: 1;
+            visibility: visible;
+            top: 100%;
+            transform: rotateX(0deg);
+        }
+        .navbar {
+            padding: 17px 0;
+        }
+    }
+    
+    .navbar-brand {
+        font-size: 35px;
+        font-weight: 600;
+    }
+    
+    .navbar-brand img {
+        height: 60px;
+        width: 60px;
+        margin-right: 10px;
+        margin-left: -70px;
+    }
+    
+    .nav-item {
+        font-size: 20px;
+    }
+    
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+    * {
+        box-sizing: border-box;
+    }
+    
+    .row a {
+        text-decoration: none;
+    }
+    
+    h1 {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+    }
+    
+    .row {
+        max-width: 9000px;
+        margin: 50px 10px;
+    }
+    
+    .card {
+        float: left;
+        padding: 0 1.7rem;
+        width: 50%;
+    }
+    
+    .card .wrapper {
+        background-color: #fff;
+        min-height: 540px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    .card .wrapper:hover .data {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    
+    .card .data {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        -webkit-transform: translateY(calc(70px + 1em));
+        transform: translateY(calc(70px + 1em));
+        -webkit-transition: -webkit-transform 0.3s;
+        transition: -webkit-transform 0.3s;
+        transition: transform 0.3s;
+        transition: transform 0.3s, -webkit-transform 0.3s;
+    }
+    
+    .card .data .content {
+        padding: 1em;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .card .author {
+        font-size: 12px;
+    }
+    
+    .card .title {
+        margin-top: 10px;
+    }
+    
+    .card .text {
+        height: 70px;
+        margin: 0;
+    }
+    
+    .card input[type='checkbox'] {
+        display: none;
+    }
+    
+    .example-1 .wrapper {
+        background: url(https://climate.nasa.gov/internal_resources/2277) 20% 1%/cover no-repeat;
+    }
+    
+    .example-1 .date {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #77d7b9;
+        color: #fff;
+        padding: 0.8em;
+    }
+    
+    .example-1 .date span {
+        display: block;
+        text-align: center;
+    }
+    
+    .example-1 .date .day {
+        font-weight: 700;
+        font-size: 24px;
+        text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.18);
+    }
+    
+    .example-1 .date .month {
+        text-transform: uppercase;
+    }
+    
+    .example-1 .date .month,
+    .example-1 .date .year {
+        font-size: 12px;
+    }
+    
+    .example-1 .content {
+        background-color: #fff;
+        box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .example-1 .title a {
+        color: gray;
+        font-size: smaller;
+    }
+    
+    .example-1 {
+        border-color: white;
+    }
+    
+    .example-2 .wrapper {
+        background: url(https://static.independent.co.uk/2020/10/30/03/Australia_Wildfire_Climate_75380.jpg?width=990) 20% 1%/cover no-repeat;
+    }
+    
+    .example-2 .date {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #77d7b9;
+        color: #fff;
+        padding: 0.8em;
+    }
+    
+    .example-2 .date span {
+        display: block;
+        text-align: center;
+    }
+    
+    .example-2 .date .day {
+        font-weight: 700;
+        font-size: 24px;
+        text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.18);
+    }
+    
+    .example-2 .date .month {
+        text-transform: uppercase;
+    }
+    
+    .example-2 .date .month,
+    .example-2 .date .year {
+        font-size: 12px;
+    }
+    
+    .example-2 .content {
+        background-color: #fff;
+        box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .example-2 .title a {
+        color: gray;
+        font-size: smaller;
+    }
+    
+    .example-2 {
+        border-color: white;
+    }
+    
+    .button {
+        padding-bottom: 20px;
+    }
+    
+    .facts .box {
+        height: 100vh;
+        width: 100%;
+    }
+    
+    .facts .left {
+        width: 49%;
+        height: auto;
+    }
+    
+    .facts .right {
+        width: 49%;
+        height: auto;
+    }
+    
+    .facts p {
+        padding: 25% 15%;
+        font-size: 17px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    
+    .facts img {
+        padding: 20% 5% 0 5%;
+        height: 400px;
+        width: 600px;
+    }
+    
+    .article {
+        text-transform: uppercase;
+        margin-top: 50px;
+    }
+    
+    .main-title {
+        color: #2d2d2d;
+        text-align: center;
+        text-transform: capitalize;
+        padding: 0.7em 0;
+    }
+    
+    .containerm {
+        padding: 1em 0;
+        float: left;
+        width: 50%;
+    }
+    
+    @media screen and (max-width: 640px) {
+        .containerm {
+            display: block;
+            width: 100%;
+        }
+    }
+    
+    @media screen and (min-width: 900px) {
+        .containerm {
+            width: 33.33333%;
+        }
+    }
+    
+    .containerm .title {
+        color: #1a1a1a;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    .contentm {
+        position: relative;
+        width: 90%;
+        max-width: 400px;
+        margin: auto;
+        overflow: hidden;
+    }
+    
+    .contentm .contentm-overlay {
+        background: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        height: 99%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        -webkit-transition: all 0.4s ease-in-out 0s;
+        -moz-transition: all 0.4s ease-in-out 0s;
+        transition: all 0.4s ease-in-out 0s;
+    }
+    
+    .contentm:hover .contentm-overlay {
+        opacity: 1;
+    }
+    
+    .contentm-image {
+        width: 425px;
+        height: 250px;
+    }
+    
+    .contentm-details {
+        position: absolute;
+        text-align: center;
+        padding-left: 1em;
+        padding-right: 1em;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+    }
+    
+    .contentm:hover .contentm-details {
+        top: 50%;
+        left: 50%;
+        opacity: 1;
+    }
+    
+    .contentm-details h3 {
+        color: #fff;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        margin-bottom: 0.5em;
+        text-transform: uppercase;
+    }
+    
+    .contentm-details p {
+        color: #fff;
+        font-size: 0.8em;
+    }
+    
+    .fadeIn-bottom {
+        top: 80%;
+    }
+    
+    .fadeIn-top {
+        top: 20%;
+    }
+    
+    .fadeIn-left {
+        left: 20%;
+    }
+    
+    .fadeIn-right {
+        left: 80%;
+    }
+    
+    .footer-distributed {
+        background: #444;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+        box-sizing: border-box;
+        width: 100%;
+        font: bold 16px sans-serif;
+        text-align: left;
+        padding: 50px 60px 40px;
+        overflow: hidden;
+    }
+    
+    section {
+        width: 100%;
+        display: inline-block;
+        background: #ccc;
+        text-align: center;
+        font-size: 22px;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+    /* Footer left */
+    
+    .footer-distributed .footer-left {
+        float: left;
+    }
+    /* The company logo */
+    
+    .footer-distributed h3 {
+        color: #ffffff;
+        font: normal 36px 'Roboto', cursive;
+        margin: 0 0 10px;
+    }
+    
+    .footer-distributed h3 span {
+        color: #5383d3;
+    }
+    /* Footer links */
+    
+    .footer-distributed .footer-links {
+        color: #ffffff;
+        margin: 0 0 10px;
+        padding: 0;
+    }
+    
+    .footer-distributed .footer-links a {
+        display: inline-block;
+        line-height: 1.8;
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .footer-distributed .footer-company-name {
+        color: #8f9296;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+    }
+    /* Footer social icons */
+    
+    .footer-distributed .footer-icons {
+        margin-top: 40px;
+    }
+    
+    .footer-distributed .footer-icons a {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        background-color: #33383b;
+        border-radius: 2px;
+        font-size: 20px;
+        color: #ffffff;
+        text-align: center;
+        line-height: 35px;
+        margin-right: 3px;
+        margin-bottom: 5px;
+    }
+    /* Footer Right */
+    
+    .footer-distributed .footer-right {
+        float: right;
+    }
+    
+    .footer-distributed .footer-right p {
+        display: inline-block;
+        vertical-align: top;
+        margin: 15px 42px 0 0;
+        color: #ffffff;
+    }
+    /* The contact form */
+    
+    .footer-distributed form {
+        display: inline-block;
+    }
+    
+    .footer-distributed form input,
+    .footer-distributed form textarea {
+        display: block;
+        border-radius: 3px;
+        box-sizing: border-box;
+        background-color: #1f2022;
+        box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+        border: none;
+        resize: none;
+        font: inherit;
+        font-size: 14px;
+        font-weight: normal;
+        color: #d1d2d2;
+        width: 400px;
+        padding: 18px;
+    }
+    
+    .footer-distributed ::-webkit-input-placeholder {
+        color: #5c666b;
+    }
+    
+    .footer-distributed ::-moz-placeholder {
+        color: #5c666b;
+        opacity: 1;
+    }
+    
+    .footer-distributed :-ms-input-placeholder {
+        color: #5c666b;
+    }
+    
+    .footer-distributed form input {
+        height: 55px;
+        margin-bottom: 15px;
+    }
+    
+    .footer-distributed form textarea {
+        height: 100px;
+        margin-bottom: 20px;
+    }
+    
+    .footer-distributed form button {
+        border-radius: 3px;
+        background-color: #33383b;
+        color: #ffffff;
+        border: 0;
+        padding: 15px 50px;
+        font-weight: bold;
+        float: right;
+    }
+    /* If you don't want the footer to be responsive, remove these media queries */
+    
+    @media (max-width: 1000px) {
+        .footer-distributed {
+            font: bold 14px sans-serif;
+        }
+        .footer-distributed .footer-company-name {
+            font-size: 12px;
+        }
+        .footer-distributed form input,
+        .footer-distributed form textarea {
+            width: 250px;
+        }
+        .footer-distributed form button {
+            padding: 10px 35px;
+        }
+    }
+    
+    @media (max-width: 800px) {
+        .footer-distributed {
+            padding: 30px;
+        }
+        .footer-distributed .footer-left,
+        .footer-distributed .footer-right {
+            float: none;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        .footer-distributed .footer-left {
+            margin-bottom: 40px;
+        }
+        .footer-distributed form {
+            margin-top: 30px;
+        }
+        .footer-distributed form {
+            display: block;
+        }
+        .footer-distributed form button {
+            float: none;
+        }
+    }
+</style>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="earth.gif">Climate change</img>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">Info</a>
+                        <ul class="dropdown-menu fade-down">
+                            <li><a class="dropdown-item" href="facts.html">Facts</a></li>
+                            <li><a class="dropdown-item" href="quiz/index.html">Quiz</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="articles/article.html">Articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="statistics.html">Statistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Solutions/index.html">Solutions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carbon-footprint-calculator/index.html">Calculator</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="https://dynaimage.cdn.cnn.com/cnn/w_1600/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F200420131157-09-earth-day-restricted.jpg" alt="First slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 class="animate__animated animate__fadeInUp animate__delay-0.5s">Antarctica</h5>
+                    <p class="animate__animated animate__fadeInUp animate__delay-0.5s"> The warmest temperature ever measured in Antarctica was recorded this year, an iceberg the size of Atlanta broke off from a glacier, and the beloved penguins that call the continent home are declining. </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="https://dynaimage.cdn.cnn.com/cnn/w_1600/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F200420131138-01-earth-day.jpg" alt="Second slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 class="animate__animated animate__fadeInUp animate__delay-0.5s">Great Barrier Reef</h5>
+                    <p class="animate__animated animate__fadeInUp animate__delay-0.5s">As ocean temperatures warm because of the climate crisis, the reef is bleaching -- and scientists worry it may never recover. Earlier this year, it experienced its third mass bleaching event in just the past five years.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="https://dynaimage.cdn.cnn.com/cnn/w_1600/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F200420131153-07-earth-day-restricted.jpg" alt="Third slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 class="animate__animated animate__fadeInUp animate__delay-0.5s">Colorado River</h5>
+                    <p class="animate__animated animate__fadeInUp animate__delay-0.5s">The Colorado River is picturesque, but it also provides water to more than 40 million people, from Denver to Los Angeles. However, its flow has dwindled by 20% compared to the last century, and researchers say the climate crisis is
+                        to blame.</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="article">
+        <h1 class="text-center">Articles</h1>
+    </div>
+
+    <hr style="width: 70%;">
+
+    <div class="row">
+        <div class="example-1 card">
+            <div class="wrapper">
+                <div class="date">
+                    <span class="day">27</span>
+                    <span class="month">Oct</span>
+                    <span class="year">2020</span>
+                </div>
+                <div class="data">
+                    <div class="content">
+                        <h1 class="title"><a href="https://climate.nasa.gov/news/3035/greenlands-retreating-glaciers-could-impact-local-ecology/">Greenland's Retreating Glaciers Could Impact Local Ecology</a></h1>
+                        <p class="text">A new study of Greenland's shrinking ice sheet reveals that many of the island's glaciers are not only retreating, but are also undergoing other physical changes, causing the rerouting of freshwater rivers beneath the glaciers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="example-2 card">
+            <div class="wrapper">
+                <div class="date">
+                    <span class="day">30</span>
+                    <span class="month">Oct</span>
+                    <span class="year">2020</span>
+                </div>
+                <div class="data">
+                    <div class="content">
+                        <h1 class="title"><a href="https://www.independent.co.uk/news/australia-wildfires-probe-recommends-climate-risk-forecasts-australia-climate-risk-country-climate-change-impacts-b1438885.html">Australia wildfires probe recommends climate risk forecasts</a></h1>
+                        <p class="text">An investigation into Australia’s catastrophic wildfire season has recommended greater efforts to forecast the impacts of climate change on specific parts of the country, warning fire behavior was becoming more extreme.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="button text-center">
+        <a href="articles/article.html"><button type="button" class="btn btn-info ">Read more</button></a>
+    </div>
+
+    <div class="facts">
+        <div class="box color1 bg-primary">
+            <div class="single-box">
+                <div class="left float-left" data-aos="fade-up-left" data-aos-duration="2000">
+                    <p>
+                        In its 2018 special report on Global Warming of 1.5°C, the United Nations Intergovernmental Panel on Climate Change (IPCC) warned that we only have twelve years to prevent the worst impacts of climate change. The year 2020 is now only two months away
+                        — leaving us just a decade to halve our emissions to avert the worst climate impacts— yet little has changed regarding our release of greenhouse gas emissions. In 2017, carbon emissions increased globally by 1.7 percent. In 2018,
+                        they increased further, up 2.7 percent from the year before. And 2019 is expected to have one of the highest rates of increase on record.</p>
+                </div>
+                <div class="right float-right" data-aos="fade-up-right" data-aos-duration="2000">
+                    <img src="https://im-media.voltron.voanews.com/Drupal/01live-166/styles/sourced/s3/2019-09/reu_climate.jpg?itok=ePC-D04-" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="box color2 bg-success">
+            <div class="single-box">
+                <div class="left float-left" data-aos="fade-up-left" data-aos-duration="2000">
+                    <img src="https://medialibrary.climatecentral.org/uploads/general/20202019EOYGlobalTemps_Top10_en_title_lg.jpg" alt="">
+                </div>
+                <div class="right float-right" data-aos="fade-up-right" data-aos-duration="2000">
+                    <p>The World Meteorological Organization (WMO) has compounded the research released in the 2018 IPCC report, stating that 20 of the warmest years on record have occurred in the last 22 years. The years 2015, 2016, 2017 and 2018 had the
+                        highest temperatures since 1880, and 2019 is keeping pace to be another record year.</p>
+                </div>
+            </div>
+        </div>
+        <div class="box color3 bg-danger">
+            <div class="single-box">
+                <div class="left float-left" data-aos="fade-up-left" data-aos-duration="2000">
+                    <p>Scientists estimate dozens of species of plants and animals currently go extinct each day —nearly 1,000 times the natural rate. By mid-century, as many as 30 to 50 percent of the total species found on Earth will have disappeared.
+                        Species diversity is crucial for ecosystem resilience, and without it, ecological communities will not have the strength to withstand change — especially not the change we’re throwing at them.</p>
+                </div>
+                <div class="right float-right" data-aos="fade-up-right" data-aos-duration="2000">
+                    <img src="https://www.edf.org/sites/default/files/facebook_thumb/GettyImages-155141288-polar-bear-1200x630-2.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="box color4 bg-warning">
+            <div class="single-box">
+                <div class="left float-left" data-aos="fade-up-left" data-aos-duration="2000">
+                    <img src="https://www.ucsusa.org/sites/default/files/styles/original/public/2019-09/Hurricane-Dorian-noaa-misinfo.jpg?itok=Sr1wTlYv" alt="">
+                </div>
+                <div class="right float-right" data-aos="fade-up-right" data-aos-duration="2000">
+                    <p>Rising temperatures — coupled with a growing number of people in cities and an increasing population of elderly— have increased heat-related deaths, according to a 2018 study in The Lancet. Higher temperatures worsen air quality, negatively
+                        affect crop production, increase the spread of infectious diseases and threaten freshwater deposits. A warming world also increases the intensity of natural disasters.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="main-title">Effects of climate change</h1>
+    <hr style="width: 70%;">
+    <div class="containerm">
+        <div class="contentm">
+            <a href="#" target="_blank">
+                <div class="contentm-overlay"></div>
+                <img class="contentm-image" src="https://static.scientificamerican.com/sciam/cache/file/8A0A57E0-4FA4-42DC-A44267E8D5D8C94C_source.png?w=590&h=800&241D3C5F-170D-4485-BFCE594D445BFE9E">
+                <div class="contentm-details fadeIn-bottom">
+                    <h3 class="contentm-title">Rising sea levels</h3>
+                    <p class="contentm-text">An iceberg melts in the waters off Antarctica. Climate change has accelerated the rate of ice loss across the continent.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="containerm">
+        <div class="contentm">
+            <a href="#" target="_blank">
+                <div class="contentm-overlay"></div>
+                <img class="contentm-image" src="https://news.cgtn.com/news/7959544e7a517a4e3067444d34637a4e7863444f31457a6333566d54/img/131fd68c199a439d92436bd943d8b369/131fd68c199a439d92436bd943d8b369.jpg">
+                <div class="contentm-details fadeIn-top">
+                    <h3>Droughts</h3>
+                    <p>The western U.S. has been locked in a drought for years. The dry, hot weather has increased the intensity and destructiveness of forest fires.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="containerm">
+        <div class="contentm">
+            <a href="#" target="_blank">
+                <div class="contentm-overlay"></div>
+                <img class="contentm-image" src="https://www.local10.com/resizer/lDEc40JRCg1tOkUbCoSf6tjNsV0=/1280x720/smart/filters:format(jpeg):strip_exif(true):strip_icc(true):no_upscale(true):quality(65)/cloudfront-us-east-1.images.arcpublishing.com/gmg/3DBZ3UZSSJCTNN4RTBHAANBVWE.jpg">
+                <div class="contentm-details fadeIn-left">
+                    <h3>Hurricanes</h3>
+                    <p>Hurricanes and other storms are likely to become stronger. Floods and droughts will become more common.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="containerm">
+        <div class="contentm">
+            <a href="#" target="_blank">
+                <div class="contentm-overlay"></div>
+                <img class="contentm-image" src="https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy84NjU1OTE4L29yaWdpbi5qcGciLCJleHBpcmVzX2F0IjoxNjIzNDYxODkxfQ.qy7-DW_2-SxLxz490wQQTxPCMYfWEh-l27T7ste_32c/img.jpg?width=980">
+                <div class="contentm-details fadeIn-right">
+                    <h3>Freshwater scarcity</h3>
+                    <p>Less freshwater will be available, since glaciers store about three-quarters of the world's freshwater.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="containerm">
+        <div class="contentm">
+            <a href="#" target="_blank">
+                <div class="contentm-overlay"></div>
+                <img class="contentm-image" src="data:image/jpeg;base64,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">
+                <div class="contentm-details fadeIn-top fadeIn-left">
+                    <h3>Spread of diseaes</h3>
+                    <p>Some diseases will spread, such as mosquito-borne malaria (and the 2016 resurgence of the Zika virus).</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="containerm">
+        <div class="contentm">
+            <a href="#" target="_blank">
+                <div class="contentm-overlay"></div>
+                <img class="contentm-image" src="https://www.totallyveganbuzz.com/wp-content/uploads/2020/02/Trophy-hunting-expeditions-push-polar-bears-close-to-extinction_TotallyVeganBuzz-1280x720.jpg">
+                <div class="contentm-details fadeIn-top fadeIn-right">
+                    <h3>Species extinction</h3>
+                    <p>Ecosystems will continue to change: Some species will move farther north or become more successful; others, such as polar bears, won’t be able to adapt and could become extinct.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <section></section>
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+            <h3>Climate<span>change</span></h3>
+
+            <p class="footer-links">
+                <a href="index.html">Home</a> ·
+                <a href="facts.html">Facts</a> ·
+                <a href="quiz/index.html">Quiz</a> ·
+                <a href="articles/article.html">Articles</a> ·
+                <a href="carbon-footprint-calculator/index.html">Calculator</a> ·
+            </p>
+
+            <p class="footer-company-name">Climate Change © 2015</p>
+
+            <div class="footer-icons">
+
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-github"></i></a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p>Contact Us</p>
+
+            <form action="#" method="post">
+
+                <input type="text" name="email" placeholder="Email">
+                <textarea name="message" placeholder="Message"></textarea>
+                <button>Send</button>
+
+            </form>
+
+        </div>
+
+    </footer>
+
+    <script>
+        var nav = document.querySelector('nav'); // Identify target
+
+        window.addEventListener('scroll', function(event) { // To listen for event
+            event.preventDefault();
+
+            if (window.scrollY > 150) { // Just an example
+                nav.style.backgroundColor = '#fff'; // or default color
+            } else {
+                nav.style.backgroundColor = 'transparent';
+            }
+        });
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
