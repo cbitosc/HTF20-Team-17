@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Analysis Report</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+<body>
+    <center><h1 style="color: green;">Climate Change Analysis</h1></center>
+    <div class="container" style="max-width: 500px; max-height: 350px;">
+        <canvas id="bar-chart" width="800" height="450"></canvas>
+    </div>
+    <br>
+    <br>
+    <hr color="red" width="75%" >
+    <div class="container" style="max-width: 800px; max-height: 350px;">
+        <canvas id="count-chart" width="800" height="450"></canvas>
+    </div>
+
+    <script>
+
+        new Chart(document.getElementById("bar-chart"), {
+            type: 'bar',
+            data: {
+                labels: ["2017", "2018", "2019","2020"],
+                datasets: [
+                    {
+                        label: "Climate Change Statistics",
+                        backgroundColor: ["#ac5", "#6be", "#a9e"],
+                        data: [6.6, 6.6, 7.8,8]
+                    }
+                ]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: 'Temperature over the years'
+                }
+            }
+        });
+        var n = 12;
+        var sstr = [];
+        var d = [];
+        for (var i = 1; i <= 12; i++) {
+            if(i==1)
+            {
+            sstr.push("jan");
+        }
+        if(i==2)
+        {
+            sstr.push("Feb");
+        }
+         if(i==3)
+        {
+            sstr.push("March");
+        }
+         if(i==4)
+        {
+            sstr.push("April");
+        }
+         if(i==5)
+        {
+            sstr.push("May");
+        }
+         if(i==6)
+        {
+            sstr.push("June");
+        }
+         if(i==7)
+        {
+            sstr.push("July");
+        }
+         if(i==8)
+        {
+            sstr.push("Aug");
+        }
+         if(i==9)
+        {
+            sstr.push("Sep");
+        }
+         if(i==10)
+        {
+            sstr.push("Oct");
+        }
+         if(i==11)
+        {
+            sstr.push("Nov");
+        }
+         if(i==12)
+        {
+            sstr.push("Dec");
+        }
+
+        }
+        console.log(sstr, d);
+        new Chart(document.getElementById("count-chart"), {
+            type: 'bar',
+            data: {
+                labels: sstr,
+                datasets: [
+                    {
+                        label: "Skill total",
+                        backgroundColor: ["#abc", "#bac", "#acb", "abc", "#acb", "#acb",
+                        "#bac", "#abc", "#acb", "#cab","#abc", "#bac", "#acb", "abc", "#acb",
+                         "#acb", "#bac", "#abc", "#acb", "#cab","#abc", "#bac", "#acb", "abc",
+                          "#acb", "#acb", "#bac", "#abc", "#acb", "#cab","#abc", "#bac", "#acb",
+                           "abc", "#acb", "#acb", "#bac", "#abc", "#acb", "#cab","#abc", "#bac",
+                            "#acb", "abc", "#acb", "#acb", "#bac", "#abc", "#acb", "#cab"],
+                        data: [3,3,2.5,3.5,4,6,8,8,7,5.5,4.3,3.8,4,3]
+                    }
+                ]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: 'Rain Fall : 2020'
+                }
+            }
+        });
+    </script>
+
+
+</body>
+
+</html
