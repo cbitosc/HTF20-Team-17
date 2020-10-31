@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Quiz</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
- 
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <a href="../index.html"><i style='font-size:30px; margin:10px; color:black;' class='fas'>&#xf060;</i></a>
     <div id="container">
         <div id="start">Start Quiz!</div>
-    
+
         <div id="quiz" style="display: none">
             <div id="question"></div>
-           <div id="qImg"></div>
+            <div id="qImg"></div>
             <div id="choices">
                 <div class="choice" id="A" onclick="checkAnswer('A')"></div>
                 <br>
@@ -32,6 +35,8 @@
         </div>
         <div id="scoreContainer" style="display: none"></div>
     </div>
+
     <script src="quiz.js"></script>
 </body>
+
 </html>
